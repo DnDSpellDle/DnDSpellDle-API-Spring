@@ -185,3 +185,5 @@ chaînes de caractères en utlisant des couleurs.
       sud et vert sinon (ou l'inverse suivant comment vous l'avez créé).
     - Vérifier sur 100 unités de temps que les feux ne passent jamais tous au
       vert.
+
+18. Exécutez vos tests en utilisant la commande `gradle test`.
