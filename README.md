@@ -20,3 +20,6 @@ Les différents sujets de TP sont accessibles ci-dessous :
 
 2. [Initiation au *framework* *Spring* et premières applications](tp/TP02)
    ([PDF](/../builds/artifacts/main/file/tp/TP02.pdf?job=sujets))
+
+3. [API des personnages d'une bande dessinée](tp/TP03)
+   ([PDF](/../builds/artifacts/main/file/tp/TP03.pdf?job=sujets))
