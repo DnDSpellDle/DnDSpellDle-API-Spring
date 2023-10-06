@@ -41,7 +41,7 @@ les dépendances nécessaires à la connexion avec une base de données.
        implementation("org.springframework.boot:spring-boot-starter-data-jpa")
        implementation("org.springframework.boot:spring-boot-starter-web")
 
-       runtimeOnly("org.sqlite:sqlite-jdbc")
+       runtimeOnly("org.xerial:sqlite-jdbc")
 
        testImplementation("org.springframework.boot:spring-boot-starter-test")
    }
