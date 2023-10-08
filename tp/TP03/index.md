@@ -174,29 +174,44 @@ Complétez maintenant votre application pour pouvoir faire les requêtes de
 recherche, de mise à jour et de suppression habituelles.
 Pour cela, vous devrez, pour chacune des requêtes :
 
-- Définir une méthode dans le *service* qui utilise la méthode appropriée du
-  *repository* pour réaliser les opérations sur la base (si besoin, vous devrez
-  ajouter cette méthode **en respectant les conventions de nommage de *Spring*).
+16. Définir une méthode dans le *service* qui utilise la méthode appropriée du
+   *repository* pour réaliser les opérations sur la base (si besoin, vous devrez
+   ajouter cette méthode **en respectant les conventions de nommage de *Spring*).
 
-- Définir une méthode dans le *contrôleur* utilisant la méthode définie dans
-  le *service* pour réaliser l'opération demandée.
+17. Définir une méthode dans le *contrôleur* utilisant la méthode définie dans
+    le *service* pour réaliser l'opération demandée.
 
-- Tester si votre application fonctionne comme prévu.
+18. Tester si votre application fonctionne comme prévu.
 
 ## Pour aller plus loin
 
-Pour l'instant, il n'y a qu'une seule table dans notre application, et aucune
-relation.
-Comment pourrions nous faire pour :
+Si vous avez terminé, vous pouvez considérer les points suivants pour compléter
+et améliorer votre application.
+Notez que *Spring* fournit toutes le nécessaire pour implanter les
+fonctionnalités décrites ci-dessous : à vous de les retrouver !
 
-- Indiquer, pour chaque personnage, son éventuel·le conjoint·e (qui est
-  également un objet de type `Character`) ?
+19. Pour l'instant, les données envoyées par l'utilisateur sont toujours
+    considérées comme correctes.
+    Cependant, les données fournies pourraient ne pas respecter les règles de
+    l'application (par exemple, l'URL de l'image en est-elle vraiment une ?).
+    Comment pourriez-vous faire pour valider les données saisies ?
 
-- Indiquer la ville où vit un personnage, sachant qu'une ville est un objet
-  caractérisé par son nom et son pays, et que plusieurs personnages peuvent
-  vivre dans cette même ville ?
+20. Pour l'instant, il n'y a qu'une seule table dans notre application, et
+    aucune relation.
+    Comment pourrions nous faire pour :
 
-Pour ces différents points, vous devez à la fois compléter les entités de
-l'application, mais également ajouter les requêtes permettant d'exploiter ces
-informations (par exemple, retrouver tous les personnages vivant dans une ville
-donnée).
+    - Indiquer, pour chaque personnage, son éventuel·le conjoint·e (qui est
+      également un objet de type `Character`) ?
+
+    - Indiquer la ville où vit un personnage, sachant qu'une ville est un objet
+      caractérisé par son nom et son pays, et que plusieurs personnages peuvent
+      vivre dans cette même ville ?
+
+    Pour ces différents points, vous devez à la fois compléter les entités de
+    l'application, mais également ajouter les requêtes permettant d'exploiter
+    ces informations (par exemple, retrouver tous les personnages vivant dans 
+    une ville donnée).
+
+20. Au fur et à mesure que votre application va s'étoffer, il va y avoir de plus
+    en plus de personnages à afficher.
+    Comment pourriez-vous faire pour proposer un découpage en pages ?
