@@ -40,8 +40,9 @@ les dépendances nécessaires à la connexion avec une base de données.
    dependencies {
        implementation("org.springframework.boot:spring-boot-starter-data-jpa")
        implementation("org.springframework.boot:spring-boot-starter-web")
-
-       runtimeOnly("org.sqlite:sqlite-jdbc")
+       
+       runtimeOnly("org.xerial:sqlite-jdbc")
+       runtimeOnly("org.hibernate.orm:hibernate-community-dialects")
 
        testImplementation("org.springframework.boot:spring-boot-starter-test")
    }
@@ -59,6 +60,9 @@ les dépendances nécessaires à la connexion avec une base de données.
 
    # Le chemin vers la base de données SQLite.
    spring.datasource.url = jdbc:sqlite:/chemin/vers/votre/base.db
+
+   # Le dialect à utiliser pour communiquer avec la base de données.
+   spring.jpa.database-platform = org.hibernate.community.dialect.SQLiteDialect
 
    # L'action à réaliser par Spring pour maintenir la cohérence entre les
    # objets Java et les tables de la base ("create" et "validate" sont d'autres 
