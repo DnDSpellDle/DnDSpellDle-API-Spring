@@ -31,10 +31,10 @@ les dépendances nécessaires à la connexion avec une base de données.
    Ajoutez la dépendance *Spring Data JPA* à ce projet, qui fournit une
    bibliothèque de persistence pour les applications *Spring*.
 
-2. Décompressez le projet créé à la question précédente, et importez le dans
+2. Décompressez le projet créé à la question précédente, et importez-le dans
    votre IDE.
    Assurez-vous que les dépendances suivantes sont bien présentes dans votre
-   fichier `build.gradle.kts`.
+   fichier `build.gradle.kts` (complétez ce fichier si ce n'est pas le cas).
 
    ```kotlin
    dependencies {
@@ -61,7 +61,7 @@ les dépendances nécessaires à la connexion avec une base de données.
    # Le chemin vers la base de données SQLite.
    spring.datasource.url = jdbc:sqlite:/chemin/vers/votre/base.db
 
-   # Le dialect à utiliser pour communiquer avec la base de données.
+   # Le dialecte à utiliser pour communiquer avec la base de données.
    spring.jpa.database-platform = org.hibernate.community.dialect.SQLiteDialect
 
    # L'action à réaliser par Spring pour maintenir la cohérence entre les
@@ -113,8 +113,8 @@ définir un.
    **ATTENTION : Vous devez bien définir une *interface* ici, vous ne devez pas
    implémenter `JpaRepository`.**
 
-9. Consultez le code de `JpaRepository` pour regarder les différentes méthodes
-   fournies par cette interface.
+9. Consultez la *javadoc* de `JpaRepository` pour regarder les différentes
+   méthodes fournies par cette interface.
 
 10. Définissez une méthode permettant de rechercher un personnage par son nom.
     Cette méthode doit impérativement retourner un objet de type `Character`,
@@ -126,8 +126,11 @@ définir un.
 ## Définition d'un *service*
 
 En *Spring*, un service implante la logique métier de l'application.
-Il peut s'agir de la validation des données, de leur transformation, de l'accès
-à la base de données *via* un *repository*, *etc*.
+Un service doit réaliser les traitements fournit par l'application pour une
+entité donnée.
+Il peut s'agir par exemple de la validation des données fournies par
+l'utilisateur, de leur transformation, de l'accès à la base de données *via* un
+*repository*, *etc*.
 
 11. Définissez une classe annotée avec `@Service` pour proposer un service
     permettant de manipuler les données relatives aux personnages de
@@ -140,7 +143,7 @@ Il peut s'agir de la validation des données, de leur transformation, de l'accè
 
 12. Définissez une méthode permettant de créer un utilisateur dans la base de
     données.
-    Une telle méthode pourrait avoir l'allure suivante.
+    Une telle méthode pourrait avoir l'allure suivante :
 
     ```java
     public Character createCharacter(Character character) {
@@ -152,13 +155,15 @@ Il peut s'agir de la validation des données, de leur transformation, de l'accè
 
 Pour exposer le service *via* une API REST, vous devez définir un contrôleur,
 de la même manière que vous l'avez fait dans le TP précédent.
+Le contrôleur doit se charger de déléguer les opérations au service approprié.
+Il ne doit pas y avoir de traitement dans le contrôleur, à moins que ce ne soit
+pour extraire des informations de la requête reçue.
 
 13. Définissez une classe annotée avec `@RestController`.
-    Cette classe doit définir un attribut dont le type est le *service*
-    défini à la section précédente, ainsi qu'un constructeur permettant de
-    l'initialiser.
+    Cette classe doit définir un attribut dont le type est le service défini à
+    la section précédente, ainsi qu'un constructeur permettant de l'initialiser.
     Ce constructeur doit être annoté avec `@Autowired` pour indiquer à *Spring*
-    qu'il devra se charger de l'instantiation de ce service.
+    qu'il devra se charger de l'instantiation de ce contrôleur.
 
 14. Définissez une méthode annotée avec `@PostMapping` pour créer un personnage.
     Vous pouvez pour cela vous inspirer de ce que vous avez fait dans le TP

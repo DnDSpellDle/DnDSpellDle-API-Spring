@@ -1,7 +1,7 @@
 ---
 # Informations relatives à l'université.
 institute: Université d'Artois
-logo: ../../templates/statement/example/images/iut.png
+logo: ../../../templates/statement/example/images/iut.png
 
 # Informations relatives au diplôme.
 degree: BUT 3 - Informatique
