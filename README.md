@@ -25,6 +25,9 @@ formation continue :
 3. [API des personnages d'une bande dessinée](tp/fc/TP03)
    ([PDF](/../builds/artifacts/main/file/tp/fc/TP03.pdf?job=sujets))
 
+3. [Gestion intelligente d'objets connectés (1) - Base de données](tp/fc/TP04)
+   ([PDF](/../builds/artifacts/main/file/tp/fc/TP04.pdf?job=sujets))
+
 
 ## Sommaire (Formation Initiale)
 
@@ -39,3 +42,6 @@ formation initiale :
 
 3. [API des personnages d'une bande dessinée](tp/fi/TP03)
    ([PDF](/../builds/artifacts/main/file/tp/fi/TP03.pdf?job=sujets))
+
+3. [Gestion intelligente d'objets connectés (1) - Base de données](tp/fi/TP04)
+   ([PDF](/../builds/artifacts/main/file/tp/fi/TP04.pdf?job=sujets))
