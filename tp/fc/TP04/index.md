@@ -133,3 +133,79 @@ contrôleur REST afin de faire quelques requêtes sur votre application.
 
 16. Complétez votre application en ajoutant les contrôleurs et routes
     nécessaires au bon fonctionnement de votre application.
+
+## Validation des données de l'utilisateur
+
+Jusqu'à maintenant, les objets transmis dans les requêtes ou les réponses sont
+directement les objets « persistés » dans la base de données (des entités ou des
+documents, suivant le type de la base utilisée).
+Bien que cela fonctionne, cela peut poser des problèmes.
+Par exemple, si les données saisies par l'utilisateur sont incorrectes, des
+identifiants peuvent être consommés par des objets qui ne seront pas stockés
+dans la base, comme ces objets eux-mêmes sont incorrects.
+Un autre problème est qu'envoyer à l'utilisateur les objets directement
+récupérés depuis la base peut exposer des données relatives à ces objets que
+l'on ne souhaiterait pas rendre disponible.
+C'est pour cela que l'on préfère souvent utiliser une autre classe pour les
+objets échangés dans les requêtes.
+Ces classes sont appelés *DTO* (pour *Data Tranfer Objects*), en opposition aux
+*DO* (pour *Domain Objects*) constitués par les entités/documents.
+
+17. Pour chacun de vos DO (donc chacune de vos classes correspondant à un
+    document), écrivez une classe représentant son équivalent DTO, que vous
+    nommerez comme vos DO en ajoutant le suffixe `DTO`.
+    Ces classes devront contenir les attributs du document que vous souhaitez
+    transmettre dans vos requêtes.
+    Ajoutez les *getters* et *setters* que vous jugerez utiles.
+
+18. Pour pouvoir envoyer un DTO dans vos requêtes, vous allez avoir besoin de
+    *mapper* vos DO en DTO, et inversement.
+    Ce *mapping* devra se faire dans le service.
+
+    a. Modifiez vos méthodes dans chacun de vos services pour qu'elles
+       retournent maintenant des DTO et prennent en paramètres des DTO à la
+       place des DO utilisés actuellement.
+
+    b. Pour transformer un DO en DTO et inversement, il faut copier chacun des
+       attribut de l'un dans l'attribut de l'autre.
+       Plutôt que de le faire manuellement, nous allons utiliser un
+       `ModelMapper`, qui effectue cette copie automatiquement.
+       Pour cela, vous devez ajouter à votre projet *Gradle* la dépendance
+       `org.modelmapper:modelmapper:3.2.0`.
+
+    c. Complétez votre service pour qu'un `ModelMapper` y soit *injecté*
+       (définissez un attribut de ce type initialisé dans un constructeur
+       annoté avec `@Autowired`).
+       Complétez ensuite les méthodes du service pour utiliser ce *mapper*
+       afin d'effectuer les conversions appropriées grâce à la méthode `map()`
+       du *mapper*.
+
+    d. Adaptez votre contrôleur pour tenir compte des changements apportés au
+       service.
+
+    e. Testez votre application afin de vous assurer que tout fonctionne.
+
+19. L'avantage d'utiliser des DTO est que l'on peut facilement vérifier que les
+    informations saisies par l'utilisateur pour chacun des attributs sont
+    correctes, en utilisant des annotations.
+
+    a. Ajoutez les annotations appropriées sur les attributs de vos DTO afin
+       de préciser les contraintes qui doivent être respectées sur ces
+       attributs, en précisant un éventuel message d'erreur qui sera retourné à
+       l'utiliateur dans le cas d'une donnée incorrecte.
+       Vous pouvez pour cela retrouver la liste des contraintes disponibles sur
+       [la javadoc](https://jakarta.ee/specifications/bean-validation/3.0/apidocs/jakarta/validation/constraints/package-summary).
+       Notez que vous pouvez ajouter plusieurs annotations différentes sur un
+       même attribut.
+
+    b. Afin de vous assurer que les données reçues de l'utilisateur respectent
+       les contraintes définies à la question précédente, vous devez demander
+       à *Spring* de *valider* les objets reçus comme `@RequestBody`.
+       Pour cela, vous devez ajoutez l'annotation `@Valid` sur les paramètres
+       de méthodes concernés.
+       Grâce à elle, vous avez la certitude que les objets donnés satisfont
+       toutes les contraintes quand vous les utilisez dans la méthode.
+
+    c. Testez votre application, en essayant de fournir des données correctes
+       ainsi que des données incorrectes.
+       Que se passe-t-il dans ce dernier cas ?
