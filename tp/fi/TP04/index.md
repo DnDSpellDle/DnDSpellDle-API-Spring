@@ -211,3 +211,47 @@ Ces classes sont appelés *DTO* (pour *Data Tranfer Objects*), en opposition aux
     c. Testez votre application, en essayant de fournir des données correctes
        ainsi que des données incorrectes.
        Que se passe-t-il dans ce dernier cas ?
+
+20. Actuellement, si vous essayez d'utiliser un identifiant plutôt qu'un objet
+    dans les attributs définis comme `@DocumentReference`, une erreur vous
+    sera retournée.
+    En effet, *Spring* s'attend ici à avoir l'objet lui-même.
+    Pour pouvoir utiliser un identifiant (sous la forme d'une chaîne de
+    caractères ici), vous allez devoir définir un *convertisseur personnalisé*.
+
+    a. Définissez une classe implémentant `Converter<String, T>` où `T` est
+       la classe des objets que vous souhaitez retrouver à partir de leur
+       identifiant.
+       Notez que cette interface est déclarée de le package
+       `org.springframework.core.convert.converter.Converter`.
+       Vous annoterez cette classe avec `@Component`, afin « d'enregistrer »
+       cette classe dans *Spring*.
+   
+    b. Déclarez dans cette classe le *repository* correspondant aux objets à
+       retrouver, et faites le nécessaire pour qu'il puisse être injecté par
+       *Spring*.
+    
+    c. Implémentez la méthode `convert()` dans cette classe, en utilisant
+       le *repository* déclaré à la question précédente.
+
+    d. Testez votre application pour vérifier que vous pouvez maintenant
+       référencer un élément par son identifiant dans les requêtes que vous
+       envoyez à l'API.
+
+## Vous avez terminé ?
+
+Si vous avez terminé les tâches demandées ici, vous pouvez compléter votre
+application en réalisant les tâches suivantes :
+
+- Implémentez la génération des QR-codes, par exemple en vous référant à
+  [cette page](https://medium.com/nerd-for-tech/how-to-generate-qr-code-in-java-spring-boot-134adb81f10d).
+  Vous proposerez une route qui vous permettra de récupérer le QR-code généré.
+
+- Configurez la documentation de votre API en utilisant la bibliothèque
+  [*Swagger*](https://www.baeldung.com/swagger-2-documentation-for-spring-rest-api).
+
+## Votre projet de SAÉ
+
+Suite aux développements réalisés dans ce projet, vous avez peut-être remarqué
+des changements que vous devriez apporter à votre projet de SAÉ.
+Faites ces changements.
