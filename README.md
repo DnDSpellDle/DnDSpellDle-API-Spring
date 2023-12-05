@@ -43,5 +43,8 @@ formation initiale :
 3. [API des personnages d'une bande dessinée](tp/fi/TP03)
    ([PDF](/../builds/artifacts/main/file/tp/fi/TP03.pdf?job=sujets))
 
-3. [Gestion intelligente d'objets connectés (1) - Base de données](tp/fi/TP04)
+4. [Gestion intelligente d'objets connectés (1) - Base de données](tp/fi/TP04)
    ([PDF](/../builds/artifacts/main/file/tp/fi/TP04.pdf?job=sujets))
+
+5. [Gestion intelligente d'objets connectés (2) - Authentification](tp/fi/TP05)
+   ([PDF](/../builds/artifacts/main/file/tp/fi/TP05.pdf?job=sujets))
