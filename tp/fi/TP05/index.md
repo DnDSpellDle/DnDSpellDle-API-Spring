@@ -166,10 +166,24 @@ autres classes.
        À partir de cet objet, vous devez :
 
        - désactiver les CSRF : `http.csrf(AbstractHttpConfigurer::disable)`
+
        - configurer les sessions pour qu'elles ne conservent pas d'état :
          `http.sessionManagement(s -> s.sessionCreationPolicy(STATELESS))`
+
        - configurer l'`AuthenticationProvider` défini à la question précédente
          via la méthode `http.authenticationProvider(...)`
+
+       - préciser les autorisations pour les différentes URL de votre
+         application (notez que vous pouvez aussi préciser les méthodes
+         HTTP concernées dans les `requestMatchers`):
+         
+       ```java
+       http.authorizeHttpRequests(req ->
+           req.requestMatchers("/pas/besoin/d/autorisation/ici").permitAll()
+              .requestMatchers("/reserve/aux/admins").hasAnyRole(ADMIN.name())
+              .anyRequest().authenticated()); // Il faut être authentifié pour tout le reste.
+       ```
+      
        - ajouter le filtre vérifiant les tokens *JWT* et importé ci-avant :
          `http.addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class)`
          (vous pouvez l'injecter comme d'habitude)
