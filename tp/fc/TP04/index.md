@@ -188,6 +188,8 @@ Ces classes sont appelés *DTO* (pour *Data Tranfer Objects*), en opposition aux
 19. L'avantage d'utiliser des DTO est que l'on peut facilement vérifier que les
     informations saisies par l'utilisateur pour chacun des attributs sont
     correctes, en utilisant des annotations.
+    Pour cela, vous devez ajouter la dépendance
+    `"org.springframework.boot:spring-boot-starter-validation"`.
 
     a. Ajoutez les annotations appropriées sur les attributs de vos DTO afin
        de préciser les contraintes qui doivent être respectées sur ces
