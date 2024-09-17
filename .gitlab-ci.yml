@@ -14,6 +14,6 @@ sujets:
         - ./scripts/make-statement.sh
     artifacts:
         paths:
-            - tp/*/TP*.pdf
+            - tp/TP*.pdf
     tags:
-        - marathon-sujet
+        - pandoc

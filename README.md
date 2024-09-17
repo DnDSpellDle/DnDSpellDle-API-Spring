@@ -1,7 +1,7 @@
-# Travaux Pratiques - Programmation Avancée
+# Travaux Pratiques - Programmation Avancée (Spring)
 
 Ce projet met à disposition de tous les sujets et ressources pour les travaux
-pratiques de la ressource *R5.A.05 - Programmation Avancée* du BUT-3
+pratiques de la ressource *R5.A.05 - Programmation Avancée (Spring)* du BUT-3
 Informatique de l'[IUT de Lens](http://www.iut-lens.univ-artois.fr)
 ([Université d'Artois](http://www.univ-artois.fr)).
 Ces supports sont disponibles sous licence
@@ -11,40 +11,6 @@ Ces supports sont disponibles sous licence
 
 Les sujets peuvent être consultés ou téléchargés directement depuis cette page.
 
-## Sommaire (Formation Continue)
+## Sommaire
 
-Les différents sujets de TP sont accessibles ci-dessous pour le groupe en
-formation continue :
-
-1. [Rappels de Java et de programmation orientée objet](tp/fc/TP01)
-   ([PDF](/../builds/artifacts/main/file/tp/fi/TP01.pdf?job=sujets))
-
-2. [Initiation au *framework* *Spring* et premières applications](tp/fc/TP02)
-   ([PDF](/../builds/artifacts/main/file/tp/fi/TP02.pdf?job=sujets))
-
-3. [API des personnages d'une bande dessinée](tp/fc/TP03)
-   ([PDF](/../builds/artifacts/main/file/tp/fc/TP03.pdf?job=sujets))
-
-3. [Gestion intelligente d'objets connectés (1) - Base de données](tp/fc/TP04)
-   ([PDF](/../builds/artifacts/main/file/tp/fc/TP04.pdf?job=sujets))
-
-
-## Sommaire (Formation Initiale)
-
-Les différents sujets de TP sont accessibles ci-dessous pour le groupe en
-formation initiale :
-
-1. [Rappels de Java et de programmation orientée objet](tp/fi/TP01)
-   ([PDF](/../builds/artifacts/main/file/tp/fi/TP01.pdf?job=sujets))
-
-2. [Initiation au *framework* *Spring* et premières applications](tp/fi/TP02)
-   ([PDF](/../builds/artifacts/main/file/tp/fi/TP02.pdf?job=sujets))
-
-3. [API des personnages d'une bande dessinée](tp/fi/TP03)
-   ([PDF](/../builds/artifacts/main/file/tp/fi/TP03.pdf?job=sujets))
-
-4. [Gestion intelligente d'objets connectés (1) - Base de données](tp/fi/TP04)
-   ([PDF](/../builds/artifacts/main/file/tp/fi/TP04.pdf?job=sujets))
-
-5. [Gestion intelligente d'objets connectés (2) - Authentification](tp/fi/TP05)
-   ([PDF](/../builds/artifacts/main/file/tp/fi/TP05.pdf?job=sujets))
+Les différents sujets de TP sont accessibles ci-dessous :
