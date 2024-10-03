@@ -14,3 +14,6 @@ Les sujets peuvent être consultés ou téléchargés directement depuis cette p
 ## Sommaire
 
 Les différents sujets de TP sont accessibles ci-dessous :
+
+1. [API des personnages d'une œuvre fictive](tp/TP01)
+   ([PDF](/../builds/artifacts/main/file/tp/TP01.pdf?job=sujets))
