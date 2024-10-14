@@ -54,7 +54,7 @@ démarrer votre projet.
      - *Artifact* : `votresujet`
      - *Name* : `Votre-Sujet`
      - *Description* : `Une super API pour votre sujet !`
-     - *Package name *: `fr.univartois.butinfo.r5a05.demo`
+     - *Package name* : `fr.univartois.butinfo.r5a05.demo`
      - *Packaging* : `Jar`
      - *Java* : `21`
 
