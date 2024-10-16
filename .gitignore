@@ -17,3 +17,7 @@ bin
 
 # Divers.
 .DS_Store
+
+# IDEs
+.idea
+.vscode
